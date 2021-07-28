@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DoAnMotTuan.Models.Identity.Bus>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BenXeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenXeB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenXeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenXeB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGianA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGianB)
+        </td>
+        <td>
+
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+
+        </td>
+    </tr>
+}
+
+</table>

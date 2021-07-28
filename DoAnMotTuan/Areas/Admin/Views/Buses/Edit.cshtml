@@ -1,0 +1,106 @@
+﻿@model DoAnMotTuan.Models.Identity.Bus
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Bus</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BenXeA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*Html.EditorFor(model => model.BenXeA, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(x => x.ThoiGianA, new List<SelectListItem>
+                {
+                       new SelectListItem() {Text = "TP Quảng Ngãi", Value="TP Quảng Ngãi"},
+                       new SelectListItem() {Text = "Dung Quất", Value="Dung Quất"},
+                       new SelectListItem() {Text = "Sa Huỳnh", Value="Sa Huỳnh"},
+                       new SelectListItem() {Text = "Cảng Sa Kỳ", Value="Sa Kỳ"},
+                       new SelectListItem() {Text = "Ba Tơ-Ba Vì", Value="Ba Vì"},
+                       new SelectListItem() {Text = "Vạn Tường", Value="Vạn Tường"},
+                       new SelectListItem() {Text = "Minh Long", Value="Minh Long"}
+                }, new { @class = "form-control" , @value = Model.BenXeA})
+                @Html.ValidationMessageFor(model => model.BenXeA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BenXeB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.ThoiGianA, new List<SelectListItem>
+                {
+                       new SelectListItem() {Text = "TP Quảng Ngãi", Value="TP Quảng Ngãi"},
+                       new SelectListItem() {Text = "Dung Quất", Value="Dung Quất"},
+                       new SelectListItem() {Text = "Sa Huỳnh", Value="Sa Huỳnh"},
+                       new SelectListItem() {Text = "Cảng Sa Kỳ", Value="Sa Kỳ"},
+                       new SelectListItem() {Text = "Ba Tơ-Ba Vì", Value="Ba Vì"},
+                       new SelectListItem() {Text = "Vạn Tường", Value="Vạn Tường"},
+                       new SelectListItem() {Text = "Minh Long", Value="Minh Long"}
+                }, new { @class = "form-control", @value = Model.BenXeB })
+                @Html.ValidationMessageFor(model => model.BenXeB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThoiGianA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*Html.EditorFor(model => model.ThoiGianA, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(x => x.ThoiGianA, new List<SelectListItem>
+                {
+                        new SelectListItem() {Text = "4:30", Value="4:30"},
+                        new SelectListItem() {Text = "5:00", Value="5:00"},
+                        new SelectListItem() {Text = "5:10", Value="5:10"},
+                        new SelectListItem() {Text = "5:15", Value="5:15"},
+                        new SelectListItem() {Text = "5:45", Value="5:45"},
+                        new SelectListItem() {Text = "6:00", Value="6:00"},
+                        new SelectListItem() {Text = "18:00", Value="18:00"}                        
+                }, new { @class = "form-control", @value= Model.ThoiGianA })
+                @Html.ValidationMessageFor(model => model.ThoiGianA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThoiGianB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*Html.EditorFor(model => model.ThoiGianB, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(x => x.ThoiGianA, new List<SelectListItem>
+                {
+                        new SelectListItem() {Text = "4:30", Value="4:30"},
+                        new SelectListItem() {Text = "5:00", Value="5:00"},
+                        new SelectListItem() {Text = "5:10", Value="5:10"},
+                        new SelectListItem() {Text = "5:15", Value="5:15"},
+                        new SelectListItem() {Text = "5:45", Value="5:45"},
+                        new SelectListItem() {Text = "6:00", Value="6:00"},
+                        new SelectListItem() {Text = "18:00", Value="18:00"}
+                }, new { @class = "form-control", @value = Model.ThoiGianB })
+                @Html.ValidationMessageFor(model => model.ThoiGianB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

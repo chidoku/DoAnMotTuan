@@ -1,0 +1,51 @@
+﻿@model DoAnMotTuan.Models.Identity.Bus
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BenXeA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BenXeA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BenXeB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BenXeB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
